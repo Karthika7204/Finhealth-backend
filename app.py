@@ -78,6 +78,11 @@ def expired_token_callback(jwt_header, jwt_payload):
 # AUTH ROUTES
 # --------------------------------------------------
 
+
+@app.route("/")
+def home():
+    return {"status": "FinHealth Backend is running"}
+
 @app.route("/api/auth/register", methods=["POST"])
 def register():
     data = request.get_json()
